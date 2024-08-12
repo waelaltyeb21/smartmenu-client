@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #eee;
+  transition: 0.3s all ease-in-out;
+}
+
+html.dark {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+html:has(:lang(ar)) {
+  font-family: "IBM Plex Sans Arabic", sans-serif !important;
+}
+html:has(:lang(en)) {
+  font-family: "Poppins", sans-serif !important;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+  /* font-family: "Poppins", sans-serif !important; */
+  /* font-family: "IBM Plex Sans Arabic", sans-serif !important; */
+}
+
+.dishDetails {
+  padding: 0rem !important;
+}
+
+.slider::-webkit-scrollbar {
+  display: none !important;
+}
+
+.dishImage {
+  animation: upToDown 3s alternate-reverse both infinite;
+}
+
+.standarStyle {
+  @apply outline-dashed outline-2;
+}
+
+@keyframes upToDown {
+  form {
+    translate: 0;
+  }
+  to {
+    translate: 0 1rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .Home {
+    display: none !important;
+  }
+}
