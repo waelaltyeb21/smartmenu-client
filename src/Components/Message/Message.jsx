@@ -3,8 +3,9 @@ import { OrdApi } from "../../Context/OrdersApi";
 import { useNavigate } from "react-router";
 
 const Message = () => {
-  const { clearOrders } = useContext(OrdApi);
+  const { clearOrders } = useContext(OrdApi); // Delete All Orders
   const navigate = useNavigate();
+  // Navigate To Home Page
   const complatedOrder = () => {
     clearOrders();
     navigate("/", { replace: true });

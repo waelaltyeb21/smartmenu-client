@@ -5,6 +5,7 @@ export const LangSwitcher = createContext(null);
 const SwitcherApi = ({ children }) => {
   const [lang, setLang] = useState(document.documentElement.lang);
   // const [lang, setLang] = useState(navigator.languages[2]);
+  // useEffect
   // Language Switcher
   const languageSwitcher = () => {
     if (lang == "ar") {

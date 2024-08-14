@@ -5,12 +5,12 @@ import { useNavigate } from "react-router";
 import Message from "../Components/Message/Message";
 
 const Invoice = () => {
-  const [lang] = useContext(LangSwitcher);
-  const [show, setShow] = useState(false);
-  const { orders, total } = useContext(OrdApi);
-  const text = lang == "en" ? "Complated" : "اكتمل الطلب";
+  const [lang] = useContext(LangSwitcher);  // Detect Language
+  const [show, setShow] = useState(false); // Show Message 
+  const { orders, total } = useContext(OrdApi); // Extract Orders From Context Api
+  const text = lang == "en" ? "Complated" : "اكتمل الطلب"; // Button Text
   const navigate = useNavigate();
-
+  // Navigate To Home Page If There Is No Orders
   useEffect(() => {
     if (orders == null || orders.length == 0) navigate("/");
   }, []);

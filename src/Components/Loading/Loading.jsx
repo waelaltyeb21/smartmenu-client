@@ -1,5 +1,6 @@
 import "./Loading.css"
 const Loading = () => {
+  // Loading Components On Fetching
   return (
     <div className="Loading mt-8 w-full flex justify-center items-center">
       <div className="spinner flex flex-row justify-center items-center">

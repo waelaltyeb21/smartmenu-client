@@ -2,19 +2,18 @@ import { useContext } from "react";
 import { OrdApi } from "../../Context/OrdersApi";
 
 const CartCard = ({ order, lang }) => {
+  // Extract Needed Functions From Context Api
   const { increaseQuantity, decreaseQuantity, deleteOrder } =
     useContext(OrdApi);
   const name = lang == "en" ? order.name.en : order.name.ar;
+  // URL To Get Images From Server
   const url = import.meta.env.VITE_REACT_IMAGE_URL;
+  // Full Image Path
   const image = `${url + order.image}`;
   return (
     <div className="CartCard flex rounded-xl py-4 px-2 mb-2 border-4">
       <div className="imgContainer">
-        <img
-          className="w-16"
-          src={`${image}`}
-          alt="order image"
-        />
+        <img className="w-16" src={`${image}`} alt="order image" />
       </div>
       <div
         className={`details w-full flex flex-col justify-between content-center font-semibold ${

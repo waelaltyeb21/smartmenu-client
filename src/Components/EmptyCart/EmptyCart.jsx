@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const EmptyCart = () => {
+  // Message If There Is No Orders On Cart
   return (
     <div className="EmptyCart text-center m-4 p-8 bg-slate-300 rounded-md outline-dashed outline-2 mt-16">
       <h1 className="text-2xl">There Is No Orders On Cart</h1>

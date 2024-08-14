@@ -5,13 +5,13 @@ import { LangSwitcher } from "../../Context/SwitcherApi";
 import Loading from "../Loading/Loading";
 
 const Cates = () => {
-  const [lang] = useContext(LangSwitcher);
-  const URL = import.meta.env.VITE_REACT_SERVER_HOST_URL;
-  const { data: categories, isLoading, error } = useFetch(`${URL}categories`);
+  const [lang] = useContext(LangSwitcher); // Detect Language
+  const URL = import.meta.env.VITE_REACT_SERVER_HOST_URL; // BackEnd API
+  const { data: categories, isLoading, error } = useFetch(`${URL}categories`); // Fetch Categories
   if (isLoading) return <Loading />;
   if (error) return <h3>Error !</h3>;
-  if (categories.length == 0) return <h3>No Data Found</h3>;
-  const IMAGE_URL = import.meta.env.VITE_REACT_IMAGE_URL;
+  if (categories.length == 0) return <h3>No Data Found</h3>; // Check If There Is No Catefories
+  const IMAGE_URL = import.meta.env.VITE_REACT_IMAGE_URL; // URL To Get Image From Server
   return (
     <div className="CatesContainer my-8 mx-2">
       <div className="heading bg-slate-400 p-8 mb-4 text-center rounded-lg">

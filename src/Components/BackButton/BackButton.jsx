@@ -5,7 +5,9 @@ import { LangSwitcher } from "../../Context/SwitcherApi";
 const BackButton = ({ toPage }) => {
   const [lang] = useContext(LangSwitcher);
   const navigate = useNavigate();
+  // Navigate Function
   const GoBack = () => {
+    // Go To Included Route
     navigate(toPage);
   };
   return (

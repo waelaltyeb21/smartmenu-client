@@ -4,7 +4,6 @@ import { LangSwitcher } from "../../Context/SwitcherApi";
 import Button from "../Button/Button";
 
 const DishList = ({ dishes }) => {
-  console.log(dishes);
   const [lang] = useContext(LangSwitcher);
   const text = lang == "en" ? "Show Cart List" : "عرض الطلبات";
   return (

@@ -3,6 +3,7 @@ import { LangSwitcher } from "../../Context/SwitcherApi";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  // Language Detector
   const [lang, languageSwitcher] = useContext(LangSwitcher);
   return (
     <header className="NavBar py-4 px-2 mb-4 border-b-4">

@@ -12,12 +12,11 @@ const Invoice = lazy(() => import("./Pages/Invoice"));
 const NoPage = lazy(() => import("./Pages/NoPage"));
 // Components
 import NavBar from "./Components/NavBar/NavBar";
-import DishDetails from "./Pages/DishDetails";
-import useFetch from "./Hooks/useFetch";
 import Loading from "./Components/Loading/Loading";
 // Lazy Loading && Susbend
 
 function App() {
+  // Prevent Right Click
   useEffect(() => {
     const handleContextmenu = (e) => {
       e.preventDefault();
@@ -40,7 +39,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dishes/:id" element={<Dishes />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/dishes_details" element={<DishDetails />} />
             <Route path="/invoice" element={<Invoice />} />
             <Route path="*" element={<NoPage />} />
           </Routes>

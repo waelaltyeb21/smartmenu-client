@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { OrdApi } from "../../Context/OrdersApi";
 
 const DishCard = ({ dish, lang }) => {
-  console.log(dish)
+  // Create New Order
   const { createOrder } = useContext(OrdApi);
   const name = lang == "ar" ? dish.name.ar : dish.name.en;
   const currency = lang == "en" ? "SDG" : "ج";

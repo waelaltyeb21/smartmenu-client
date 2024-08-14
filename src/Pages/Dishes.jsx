@@ -7,14 +7,14 @@ import { LangSwitcher } from "../Context/SwitcherApi";
 import Loading from "../Components/Loading/Loading";
 
 const Dishes = () => {
-  const { id } = useParams();
-  const [lang] = useContext(LangSwitcher);
-  const URL = import.meta.env.VITE_REACT_SERVER_HOST_URL;
-  const { data, isLoading, error } = useFetch(`${URL}dishes/category/${id}`);
+  const { id } = useParams(); // Extract ID From Params
+  const [lang] = useContext(LangSwitcher); // Detect Language
+  const URL = import.meta.env.VITE_REACT_SERVER_HOST_URL; // BackEnd Server
+  const { data, isLoading, error } = useFetch(`${URL}dishes/category/${id}`); // Fetch Dishes Based On Category
   if (isLoading) return <Loading />;
   if (error) return <h3>Error !</h3>;
-  if (data.dishes.length == 0) return <h3>No Data Found</h3>;
-  const category = lang == "en" ? data.category.name_en : data.category.name_ar;
+  if (data.dishes.length == 0) return <h3>No Data Found</h3>; // Check If There Is No Dishes In This Category
+  const category = lang == "en" ? data.category.name_en : data.category.name_ar; // Category Name
   return (
     <div className="Dishes">
       <div className="heading flex justify-between items-center mb-8 px-2">

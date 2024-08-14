@@ -1,6 +1,6 @@
 import BackButton from "../BackButton/BackButton";
 import CartCard from "../CartCard/CartCard";
-
+ // Display Cart List
 const CartList = ({ orders, total, lang }) => {
   return (
     <div className="CartList">
