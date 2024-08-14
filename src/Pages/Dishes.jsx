@@ -4,16 +4,16 @@ import BackButton from "../Components/BackButton/BackButton";
 import useFetch from "../Hooks/useFetch";
 import { useContext } from "react";
 import { LangSwitcher } from "../Context/SwitcherApi";
+import Loading from "../Components/Loading/Loading";
 
 const Dishes = () => {
   const { id } = useParams();
   const [lang] = useContext(LangSwitcher);
   const URL = import.meta.env.VITE_REACT_SERVER_HOST_URL;
   const { data, isLoading, error } = useFetch(`${URL}dishes/category/${id}`);
-  if (isLoading) return <h3>Loading...</h3>;
+  if (isLoading) return <Loading />;
   if (error) return <h3>Error !</h3>;
-  console.log(`${URL}dishes/${id}`);
-  console.log();
+  if (data.dishes.length == 0) return <h3>No Data Found</h3>;
   const category = lang == "en" ? data.category.name_en : data.category.name_ar;
   return (
     <div className="Dishes">

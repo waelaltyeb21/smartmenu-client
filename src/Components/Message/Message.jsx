@@ -13,10 +13,7 @@ const Message = () => {
     <div className="Message">
       <div className="msgContainer fixed left-0 top-0 h-full w-full flex justify-center items-center backdrop-blur-sm z-40">
         <div className="msgContent mx-4 relative standarStyle -outline-offset-4 flex flex-col bg-slate-100 p-4 rounded-md text-center font-semibold">
-          <div className="cancel absolute top-2 right-4 text-slate-600">
-            <i className="fa-solid fa-cancel text-slate-600"></i>
-          </div>
-          <h1 className="text-3xl p-4 mb-4 text-indigo-600 font-bold">Cajon</h1>
+          <h1 className="text-3xl p-4 mb-4 text-indigo-600 font-bold">Logo</h1>
           <h3 className="mb-2">Thanks For Choosing Our Humble Resturant</h3>
           <span className="text-gray-600">We Hopefuly You Like Our Meals</span>
           <button

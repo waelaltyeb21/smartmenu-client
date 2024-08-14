@@ -14,6 +14,7 @@ const NoPage = lazy(() => import("./Pages/NoPage"));
 import NavBar from "./Components/NavBar/NavBar";
 import DishDetails from "./Pages/DishDetails";
 import useFetch from "./Hooks/useFetch";
+import Loading from "./Components/Loading/Loading";
 // Lazy Loading && Susbend
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
     };
   }, []);
   return (
-    <Suspense fallback={"تحميل..."}>
+    <Suspense fallback={<Loading />}>
       <div className="app *:px-2 relative select-none">
         <h1 className="text-red-600 text-center lg:block hidden">
           Sorry This Menu Doesn't Work On Labtops Neither PC's
